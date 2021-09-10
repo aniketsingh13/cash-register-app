@@ -1,9 +1,65 @@
-
+body{
+    margin: 0;
+    text-align: center;
+}
 
 .container{
+    font-family: 'Noto Sans SC', sans-serif;
+    margin-top: 0;
    display: flex;
     flex-direction: column;
-    width: 50vw;
+    width: 30vw;
     margin: auto;
     text-align: center;
+    background-color: #EB92BE;
+    height: 35vw;
+    
+}
+.phrase{
+    font-size: smaller;
+}
+label{
+    font-size: x-large;
+}
+#bill-amount{
+ width: 27vw;
+ font-size: large;
+ text-align: center;
+ margin: 1rem;
+}
+#cash-taken{
+    width: 27vw;
+    font-size: large;
+    text-align: center;
+    margin: .5rem 1rem 1rem;
+}
+
+#on-click{
+width: 8vw;
+height: 3vw;
+text-align: center;
+margin: 0.5rem 9rem 1rem;
+background-color: #A8E7E9;
+border-radius: 0.5rem;
+}
+caption{
+    font-size: larger;
+}
+.change-table{
+    border: 1px solid black;
+}
+th{
+    border: 1px solid black;
+    background-color: #A8E7E9;
+}
+td{
+    border: 1px solid black;
+    background-color: #A8E7E9;
+}
+
+.gt {
+    font-size: 250%;
+}
+h2{
+    margin-top: 1rem;
 }
