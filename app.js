@@ -12,7 +12,7 @@ onClick.addEventListener("click", checkCondiion)
 function checkCondiion() {
     hideMessage();
     console.log(cashGiven.value);
-    if (billAmount.value > 0  ) {
+    if (billAmount.value > 0 && cashGiven.value > 0 ) {
         if (cashGiven.value >= billAmount.value) {
             const amountToBEReturned = cashGiven.value - billAmount.value;
             calculateChange(amountToBEReturned);
