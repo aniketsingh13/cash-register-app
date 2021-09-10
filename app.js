@@ -1,38 +1,37 @@
 var billAmount = document.querySelector("#bill-amount");
 var cashGiven = document.querySelector("#cash-taken");
 var onClick = document.querySelector("#on-click");
-var errorCheck = document.querySelector("#error-check");
+var errorCheck = document.querySelector(".error-check");
 var returnChange = document.querySelectorAll(".return-change")
 
 
 var noteWeHave = [2000, 500, 100, 20, 10, 5, 1];
 
-onClick.addEventListener("click", checkCondiion);
+onClick.addEventListener("click", checkCondiion)
 
 function checkCondiion() {
-
-
-    errorCheck.style.display = "none";
-    if (billAmount.value > 0) {
-        if (cashGiven.value >= billAmount.vaue) {
-            const amountToBeReturned = cashGiven.value - billAmount.value;
-            calculateChange(amountToBeReturned);
+    hideMessage();
+    console.log(cashGiven.value);
+    if (billAmount.value > 0  ) {
+        if (cashGiven.value >= billAmount.value) {
+            const amountToBEReturned = cashGiven.value - billAmount.value;
+            calculateChange(amountToBEReturned);
 
         } else {
             showMessage("Do you wanna wash plate?");
         }
-
+        
 
     } else {
-
+        
         showMessage("invalid bill amount");
     }
 };
 
-function calculateChange(amountToBeReturned) {
-    for (let i = 0; i < noteWeHave.length; i++) {
-        const numberOfNotes = Math.trunc(amountToBeReturned / noteWeHave[i]);
-        amountToBeReturned = amountToBeReturned % noteWeHave[i];
+function calculateChange(amountToBEReturned) {
+    for (var i = 0; i < noteWeHave.length; i++) {
+        var numberOfNotes = Math.trunc(amountToBEReturned /  noteWeHave[i]);
+        amountToBEReturned = amountToBEReturned % noteWeHave[i];
         returnChange[i].innerText = numberOfNotes;
     }
 }
