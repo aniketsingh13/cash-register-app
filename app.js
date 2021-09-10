@@ -11,27 +11,26 @@ onClick.addEventListener("click", checkCondiion)
 
 function checkCondiion() {
     hideMessage();
-    
+
     if (Number(billAmount.value > 0)) {
         if (Number(cashGiven.value) >= Number(billAmount.value)) {
             const amountToBEReturned = cashGiven.value - billAmount.value;
             calculateChange(amountToBEReturned);
 
-        }
-         else {
+        } else {
             showMessage("Do you wanna wash plate?");
         }
-        
+
 
     } else {
-        
+
         showMessage("invalid bill amount");
     }
 };
 
 function calculateChange(amountToBEReturned) {
     for (var i = 0; i < noteWeHave.length; i++) {
-        var numberOfNotes = Math.trunc(amountToBEReturned /  noteWeHave[i]);
+        var numberOfNotes = Math.trunc(amountToBEReturned / noteWeHave[i]);
         amountToBEReturned = amountToBEReturned % noteWeHave[i];
         returnChange[i].innerText = numberOfNotes;
     }
